@@ -285,12 +285,12 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="e5H-Yz-d07"/>
                                                         </constraints>
-                                                        <state key="normal" title="USD"/>
+                                                        <state key="normal" title="NZD"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g44-0D-wZH">
                                                         <rect key="frame" x="44" y="0.0" width="315" height="107"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="46"/>
-                                                        <state key="normal" title="¥0"/>
+                                                        <state key="normal" title="$0"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -302,7 +302,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="mHi-A0-U3B"/>
                                                         </constraints>
-                                                        <state key="normal" title="CYN"/>
+                                                        <state key="normal" title="USD"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-Sg-qmK">
                                                         <rect key="frame" x="44" y="0.0" width="315" height="107"/>
@@ -339,9 +339,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="inputCountryCode" destination="t1G-cr-eRl" id="zBN-SK-owf"/>
+                        <outlet property="inputCountryButton" destination="t1G-cr-eRl" id="Ee4-qR-7iR"/>
                         <outlet property="inputCurrency" destination="g44-0D-wZH" id="9Qm-SC-0tG"/>
-                        <outlet property="outputCountryCode" destination="KsJ-UI-ep3" id="aMO-bB-pd4"/>
+                        <outlet property="outputCountryButton" destination="KsJ-UI-ep3" id="g8E-Lf-bHj"/>
                         <outlet property="outputCurrency" destination="0gv-Sg-qmK" id="Nd2-Gu-32L"/>
                     </connections>
                 </viewController>

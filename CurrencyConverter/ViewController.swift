@@ -3,25 +3,52 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var inputCurrency: UIButton!
     @IBOutlet weak var outputCurrency: UIButton!
-    @IBOutlet weak var inputCountryCode: UIButton!
-    @IBOutlet weak var outputCountryCode: UIButton!
+    @IBOutlet weak var inputCountryButton: UIButton!
+    @IBOutlet weak var outputCountryButton: UIButton!
 
-
-
-    //  Use this value to calculte the currency!  //
-    var convertRate: Double = 5   // For example
-    var inputCountryInfo: (String, String) = ("USD", "$")
-    var outputCountryInfo: (String, String) = ("CYN", "¥")
-    // -------------------------------------------//
+    var exchangeRate: Double = 0.68
+    var inputCountryInfo: (String, String) = ("NZD", "$") {
+        willSet {
+            inputCountryButton.setTitle(newValue.0, for: .normal)
+        }
+    }
+    var outputCountryInfo: (String, String) = ("USD", "$") {
+        willSet {
+            outputCountryButton.setTitle(newValue.0, for: .normal)
+        }
+    }
 
     var isFirstDigit = true
     var inputValue: Double = 0
     var outputValue: Double = 0
+    var inputString: String {
+        get {
+            return tempString
+        }
+        set {
+            inputCurrency.setTitle((inputCountryInfo.1 + newValue), for: .normal)
+            inputValue = Double (newValue)!
+        }
+    }
 
+
+    var outputString: String {
+        get {
+            return String(format: "%.2f", outputValue)
+        }
+        set {
+            outputCurrency.setTitle((outputCountryInfo.1 + newValue), for: .normal)
+            outputValue = Double (newValue)!
+        }
+    }
+
+    var tempString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        inputCountryCode.setTitle(inputCountryInfo.0, for: .normal)
-        outputCountryCode.setTitle(outputCountryInfo.0, for: .normal)
+        inputCountryButton.setTitle(inputCountryInfo.0, for: .normal)
+        outputCountryButton.setTitle(outputCountryInfo.0, for: .normal)
+        inputString = "0"
+        outputString = "0"
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,16 +57,15 @@ class ViewController: UIViewController {
     
     @IBAction func digitPress(_ sender: UIButton) {
         let digit = sender.currentTitle!
-        inputCurrency.setTitle((isFirstDigit ? inputCountryInfo.1 + digit : inputCurrency.currentTitle! + digit), for: .normal)
+        tempString = isFirstDigit ? digit : tempString + digit
+        inputString = tempString
         isFirstDigit = false
 
-        inputValue = strToDecimal(str: inputCurrency.currentTitle!)
         print(inputValue)
     }
 
     @IBAction func ConvertAction(_ sender: Any) {
-        outputValue = inputValue * convertRate
-
+        outputValue = inputValue * exchangeRate
         let c:String = String(format:"%.2f", outputValue)
         outputCurrency.setTitle((outputCountryInfo.1 + c), for: .normal)
     }
@@ -48,24 +74,23 @@ class ViewController: UIViewController {
         isFirstDigit = true
         inputCurrency.setTitle("0", for: .normal)
         outputCurrency.setTitle("0", for: .normal)
-        inputValue = 0
-        outputValue = 0
+        inputString = "0"
+        outputString = "0"
     }
 
     @IBAction func SwapAction(_ sender: Any) {
+        let tempTuple: (String, String) = inputCountryInfo
+        inputCountryInfo = outputCountryInfo
+        outputCountryInfo = tempTuple
+
+        let tempString = inputString
+        inputString = outputString
+        outputString = tempString
+
+        exchangeRate = 1 / exchangeRate
     }
 
     @IBAction func operationAction(_ sender: Any) {
-    }
-
-    func strToDecimal (str: String) -> Double {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        if let number = formatter.number(from: str) {
-            let amount = number.doubleValue
-            return amount
-        }
-        return -1
     }
 
 }
