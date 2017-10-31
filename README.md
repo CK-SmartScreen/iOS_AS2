@@ -13,3 +13,4 @@ var outputCurrencyInfo: (String, String) = ("USD", "$")
 + You might need to retrieve a Currency list and create a table for user to choose, if you have time bro.
 + After user change either one or both currency, please update the above tuples and the exchangeRate.
 + Then the user can play this app for fun.
++ The bottom bar is reserved for Ad. I will add it later.
