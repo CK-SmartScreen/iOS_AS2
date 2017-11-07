@@ -10,8 +10,8 @@ import Foundation
 import CoreData
 
 func createMainContext(completion: @escaping (NSPersistentContainer) -> Void) {
-    let container = NSPersistentContainer(name: "Rates")
-    print(container.persistentStoreDescriptions.first?.url! as Any) // Get SQLite DB location on disk.
+    let container = NSPersistentContainer(name: "CurrencyModel")
+//    print(container.persistentStoreDescriptions.first?.url! as Any) // Get SQLite DB location on disk.
     
     // Asynchronous
     container.loadPersistentStores(completionHandler: {
