@@ -1,0 +1,194 @@
+[
+    {
+    "name": "US Dollar",
+    "code": "USD",
+    "rate": 1.0,
+    "symbol": "$"
+    },
+    {
+    "name": "New Zealand Dollar",
+    "code": "NZD",
+    "rate": 1.4493,
+    "symbol": "$"
+    },
+    {
+    "name": "Australian Dollar",
+    "code": "AUD",
+    "rate": 1.3046,
+    "symbol": "$"
+    },
+    {
+    "name": "Canadian Dollar",
+    "code": "CAD",
+    "rate": 1.2758,
+    "symbol": "$"
+    },
+    {
+    "name": "Bulgarian Lev",
+    "code": "BGN",
+    "rate": 1.6875,
+    "symbol": "лв"
+    },
+    {
+    "name": "Brazilian Real",
+    "code": "BRL",
+    "rate": 3.2937,
+    "symbol": "R$"
+    },
+    {
+    "name": "Swiss Franc",
+    "code": "CHF",
+    "rate": 1.0003,
+    "symbol": ""
+    },
+    {
+    "name": "Chinese Yuan Renminbi",
+    "code": "CNY",
+    "rate": 6.6341,
+    "symbol": "¥"
+    },
+    {
+    "name": "Czech Koruna",
+    "code": "CZK",
+    "rate": 22.098,
+    "symbol": "Kč"
+    },
+    {
+    "name": "Danish Krone",
+    "code": "DKK",
+    "rate": 6.421,
+    "symbol": "kr."
+    },
+    {
+    "name": "British Pound",
+    "code": "GBP",
+    "rate": 0.76264,
+    "symbol": "£"
+    },
+    {
+    "name": "Hong Kong Dollar",
+    "code": "HKD",
+    "rate": 7.8029,
+    "symbol": "HK$"
+    },
+    {
+    "name": "Croatian Kuna",
+    "code": "HRK",
+    "rate": 6.5035,
+    "symbol": "kn"
+    },
+    {
+    "name": "Hungarian Forint",
+    "code": "HUF",
+    "rate": 268.46,
+    "symbol": "Ft"
+    },
+    {
+    "name": "Indonesian Rupiah",
+    "code": "IDR",
+    "rate": 13516,
+    "symbol": "Rp"
+    },
+    {
+    "name": "Israeli Shekel",
+    "code": "ILS",
+    "rate": 3.5135,
+    "symbol": "₪"
+    },
+    {
+    "name": "Indian Rupee",
+    "code": "INR",
+    "rate": 64.673,
+    "symbol": "₹"
+    },
+    {
+    "name": "Japanese Yen",
+    "code": "JPY",
+    "rate": 114.14,
+    "symbol": "¥"
+    },
+    {
+    "name": "South Korean Won",
+    "code": "KRW",
+    "rate": 1112,
+    "symbol": "₩"
+    },
+    {
+    "name": "Mexican Peso",
+    "code": "MXN",
+    "rate": 19.103,
+    "symbol": "$"
+    },
+    {
+    "name": "Malaysian Ringgit",
+    "code": "MYR",
+    "rate": 4.2355,
+    "symbol": "RM"
+    },
+    {
+    "name": "Norwegian Krone",
+    "code": "NOK",
+    "rate": 8.1432,
+    "symbol": "kr"
+    },
+    {
+    "name": "Philippine Peso",
+    "code": "PHP",
+    "rate": 51.096,
+    "symbol": "₱"
+    },
+    {
+    "name": "Polish Zloty",
+    "code": "PLN",
+    "rate": 3.659,
+    "symbol": "zł"
+    },
+    {
+    "name": "Romanian Leu",
+    "code": "RON",
+    "rate": 3.9599,
+    "symbol": "lei"
+    },
+    {
+    "name": "Russian Ruble",
+    "code": "RUB",
+    "rate": 58.959,
+    "symbol": "₽"
+    },
+    {
+    "name": "Swedish Krona",
+    "code": "SEK",
+    "rate": 8.4282,
+    "symbol": "kr"
+    },
+    {
+    "name": "Singapore Dollar",
+    "code": "SGD",
+    "rate": 1.3646,
+    "symbol": "$"
+    },
+    {
+    "name": "Thai Baht",
+    "code": "THB",
+    "rate": 33.165,
+    "symbol": "฿"
+    },
+    {
+    "name": "Turkish Lira",
+    "code": "TRY",
+    "rate": 3.8667,
+    "symbol": "₺"
+    },
+    {
+    "name": "South African Rand",
+    "code": "ZAR",
+    "rate": 14.202,
+    "symbol": "R"
+    },
+    {
+    "name": "Euro",
+    "code": "EUR",
+    "rate": 0.86281,
+    "symbol": "€"
+    }
+ ]
