@@ -139,14 +139,14 @@ class CalculatorViewController: UIViewController {
 // MARK: Delegate.
 extension CalculatorViewController: CurrencyViewControllerDelegate {
     
-    func didChangeCurrency(code: String, symbol: String, target: String) {
+    func didChangeCurrency(code: String, symbol: String, rate: Double, target: String) {
         if target == "input" {
             self.inputCurrencyInfo = (code, symbol)
-            print("Input currency changed to: \(code)")
+            print("Input currency changed to: \(code), with rate: \(rate)")
         }
         if target == "output" {
             self.outputCurrencyInfo = (code, symbol)
-            print("Output currency changed to: \(code)")
+            print("Output currency changed to: \(code), with rate: \(rate)")
         }
     }
 
