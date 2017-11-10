@@ -98,13 +98,14 @@ extension CurrencyViewController: UITableViewDelegate, UITableViewDataSource {
         let currency = tableData[indexPath.row]
         let code = currency.code!
         let symbol = currency.symbol!
-        delegate?.didChangeCurrency(code: code, symbol: symbol, target: targetCurrency)
+        let rate = Double(exactly: currency.rate!)!
+        delegate?.didChangeCurrency(code: code, symbol: symbol, rate: rate, target: targetCurrency)
         self.dismiss(animated: true, completion: {})
     }
     
 }
 
 protocol CurrencyViewControllerDelegate {
-    func didChangeCurrency(code: String, symbol: String, target: String)
+    func didChangeCurrency(code: String, symbol: String, rate: Double, target: String)
 }
 
