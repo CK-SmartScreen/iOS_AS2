@@ -13,7 +13,14 @@ class CalculatorViewController: UIViewController {
     var outputString = "0"
     var operation1: Double = 0
     var operation2: String = "="
-    var exchangeRate: Double = 0.68
+    var inputRate = 1.44
+    var outputRate = 1.0
+    var exchangeRate: Double {
+        get{
+            return outputRate / inputRate
+        }
+    }
+
     
     var inputCurrencyInfo: (String, String) = ("NZD", "$") {
         willSet {
@@ -112,7 +119,9 @@ class CalculatorViewController: UIViewController {
         let tmp = inputValue
         inputValue = outputValue
         outputValue = tmp
-        exchangeRate = 1 / exchangeRate
+        let tmprate = inputRate
+        inputRate = outputRate
+        outputRate = tmprate
     }
     
     // MARK: Segue.
@@ -143,10 +152,14 @@ extension CalculatorViewController: CurrencyViewControllerDelegate {
         if target == "input" {
             self.inputCurrencyInfo = (code, symbol)
             print("Input currency changed to: \(code), with rate: \(rate)")
+            inputRate = rate
+            self.deleteAction(UIButton())
         }
         if target == "output" {
             self.outputCurrencyInfo = (code, symbol)
             print("Output currency changed to: \(code), with rate: \(rate)")
+            outputRate = rate
+            self.deleteAction(UIButton())
         }
     }
 
