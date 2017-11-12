@@ -73,11 +73,19 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func digitPress(_ sender: UIButton) {
-        if (inputString.range(of:".") != nil && sender.currentTitle == ".") {
+        let digit = sender.currentTitle!
+        if (isFirstDigit) {
+            inputString = ""
+        }
+        if (inputString.range(of:".") != nil && digit == ".") {
+            return
+        }
+        if (isFirstDigit && digit == "."){
+            inputString = "0."
+            isFirstDigit = false
             return
         }
 
-        let digit = sender.currentTitle!
         inputString = isFirstDigit ? digit : inputString + digit
         inputCurrency.setTitle((inputCurrencyInfo.1 + inputString), for: .normal)
 
