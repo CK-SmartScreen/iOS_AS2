@@ -1,13 +1,15 @@
-
 import UIKit
+import GoogleMobileAds
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var inputCurrency: UIButton!
     @IBOutlet weak var outputCurrency: UIButton!
     @IBOutlet weak var inputCountryButton: UIButton!
     @IBOutlet weak var outputCountryButton: UIButton!
     @IBOutlet weak var DecimalPointButton: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
+
 
     var inputString = "0"
     var outputString = "0"
@@ -66,6 +68,22 @@ class CalculatorViewController: UIViewController {
         outputValue = 0
         inputString = "0"
         outputString = "0"
+
+        // For Admob
+        bannerView.isHidden = true
+        bannerView.delegate = self
+        bannerView.adUnitID = "ca-app-pub-8666765004598567/9186400824"
+        bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.isHidden = false
+    }
+
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        bannerView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
